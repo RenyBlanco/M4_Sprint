@@ -1,22 +1,22 @@
 export class Producto {
     id;
-    idcategoria;
-    idsucursal;
+    idCategoria;
+    idSucursal;
     nombre;
     precio;
     stock;
     descripcion;
-    etiquetas ;
+    etiqueta ;
     link;
     constructor(_id,  _cat, _suc, _nom, _pre, _stk, _desc, _eti, _lnk) {
         this.id = _id;
-        this.idcategoria = _cat;
-        this.idsucursal = _suc;
+        this.idCategoria = _cat;
+        this.idSucursal = _suc;
         this.nombre = _nom;
         this.precio = _pre;
         this.stock = _stk;
         this.descripcion = _desc;
-        this.etiquetas = _eti;
+        this.etiqueta = _eti;
         this.link = _lnk;
     }
     set pId(id) {
@@ -27,18 +27,18 @@ export class Producto {
     }
 
     set pCategoria(categoria) {
-        this.categoria = categoria;
+        this.idCategoria = categoria;
     }
     
     get pCategoria() {
-        return this.categoria;
+        return this.idCategoria;
     }
 
     set pSucursal(sucursal) {
-        this.sucursal = sucursal;
+        this.idSucursal = sucursal;
     }
     get pSucursal() {
-        return this.sucursal;
+        return this.idSucursal;
     }
     set pNombre(nombre) {
         this.nombre = nombre;
@@ -64,11 +64,11 @@ export class Producto {
     get pDescripcion() {
         return this.descripcion;
     }
-    set pEtiquetas(etiquetas) {
-        this.etiquetas = etiquetas;
+    set pEtiquetas(etiqueta) {
+        this.etiqueta = etiqueta;
     }
     get pEtiquetas() {
-        return this.etiquetas;
+        return this.etiqueta;
     }
     set pLink(link) {
         this.link = link;

@@ -11,8 +11,8 @@ export class Categoria{
     get cId() { 
         return this.id; 
     }
-    set cCat(categoria) {
-        this.categoria = categoria;
+    set cCat(_cat) {
+        this.categoria = _cat;
     }
     get cCat() {
         return this.categoria;
