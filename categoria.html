@@ -109,9 +109,10 @@
                         mensaje(2,'');
                 });
             }else{
-                    fetch('https://bsite.net/metalflap/td-categoria/'+id, {
+                    fetch('https://bsite.net/metalflap/td-categoria', {
                         method: 'PUT',
                         body: JSON.stringify({
+                            id: id,
                             nombre: data.get('categoria')
                         }),
                         headers: {

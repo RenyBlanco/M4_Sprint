@@ -110,9 +110,10 @@
                     console.warn(error);
                 });
             }else{
-                fetch('https://bsite.net/metalflap/td-sucursal/'+id, {
+                fetch('https://bsite.net/metalflap/td-sucursal', {
                     method: 'PUT',
                     body: JSON.stringify({
+                        id: id,
                         nombre: data.get('sucursal')
                     }),
                     headers: {

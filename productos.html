@@ -176,9 +176,10 @@
                         mensaje(2,'');
                 });
             }else{
-                fetch('https://bsite.net/metalflap/td-producto/'+id, {
+                fetch('https://bsite.net/metalflap/td-producto', {
                     method: 'PUT',
                     body: JSON.stringify({
+                        id: id,
                         nombre: data.get('nombre'),
                         precio: data.get('precio'),
                         link: data.get('link'),
