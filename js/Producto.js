@@ -64,10 +64,10 @@ export class Producto {
     get pDescripcion() {
         return this.descripcion;
     }
-    set pEtiquetas(etiqueta) {
+    set pEtiqueta(etiqueta) {
         this.etiqueta = etiqueta;
     }
-    get pEtiquetas() {
+    get pEtiqueta() {
         return this.etiqueta;
     }
     set pLink(link) {

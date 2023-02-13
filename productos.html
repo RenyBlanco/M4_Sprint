@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <div class="form-group row mt-1">
-                            <label for="product" class="col-2 col-form-label">Producto :</label>
+                            <label for="nombre" class="col-2 col-form-label">Producto :</label>
                             <div class="col-6">
                                 <input class="form-control" name="nombre" type="text" id="nombre" placeholder="Titulo del producto" autocomplete="off">
                             </div>
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="form-group row mt-1">
-                            <label for="etiquetas" class="col-2 col-form-label">Etiquetas :</label>
+                            <label for="etiqueta" class="col-2 col-form-label">Etiquetas :</label>
                             <div class="col-6">
                                 <input class="form-control" name="etiqueta" type="text" id="etiqueta" placeholder="Etiquetas" autocomplete="off">
                             </div>
@@ -148,29 +148,32 @@
             let form = document.querySelector('#frmProd');
             let data = new FormData(form);
             event.preventDefault();
-            if(id==='no') {   
+            if(id==='no') { 
                 fetch('https://bsite.net/metalflap/td-producto', {
                     method: 'POST',
                     body: JSON.stringify({
                         nombre: data.get('nombre'),
-                        precio: data.get('precio'),
+                        precio: parseInt(data.get('precio')),
                         link: data.get('link'),
-                        stock: data.get('stock'),
+                        stock: parseInt(data.get('stock')),
                         etiqueta: data.get('etiqueta'),
                         descripcion: data.get('descripcion'),
-                        idCategoria:data.get('idCateg'),
-                        idSucursal: data.get('idSuc')
+                        idCategoria: parseInt(data.get('idCateg')),
+                        idSucursal: parseInt(data.get('idSuc'))
                     }),
                     headers: {
                         "Content-type": "application/json"
                     }
                 }).then(function (response) {
-                    mensaje(1,'Producto ingresado con éxito!')
+                    if (response.ok) {
+                        mensaje(1,'Producto ingresado con éxito!');
+                        return response.json();
+                    }
                     return Promise.reject(response);
                 }).then(function (data) {
                     console.log(data);
                 }).catch(function (error) {
-                    mensaje(2,'');
+                        mensaje(2,'');
                 });
             }else{
                 fetch('https://bsite.net/metalflap/td-producto/'+id, {
@@ -190,7 +193,7 @@
                     }
                 })
                 .then(response => response.json())
-                .then(json => mensaje(1,'Sucursal Actualizada con éxito!'))
+                .then(json => mensaje(1,'Producto Actualizado con éxito!'))
             }
         });
 

@@ -26,7 +26,7 @@ function muestraProd(valor) {
         producto.pPrecio = valor[i].precio;
         producto.pStock = valor[i].stock;
         producto.pDescripcion = valor[i].descripcion;
-        producto.pEtiquetas = valor[i].etiqueta;
+        producto.pEtiqueta = valor[i].etiqueta;
         html += `<tr>
                 <td>${producto.pId}</td>
                 <td>${producto.pCategoria}</td>
@@ -34,7 +34,7 @@ function muestraProd(valor) {
                 <td>${producto.pNombre}</td>
                 <td>${producto.pDescripcion}</td>
                 <td>${producto.pPrecio}</td>
-                <td>${producto.pEtiquetas}</td>
+                <td>${producto.pEtiqueta}</td>
                 <td>${producto.pStock}</td>
                 <td><a href="javascript:void(0)" onclick="editaProd(${i})">Editar</a>&nbsp;
                 <a href="javascript:void(0)" onclick="eliminaProd(${producto.pId})">Eliminar</a></td>
